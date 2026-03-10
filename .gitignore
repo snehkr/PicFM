@@ -1,0 +1,33 @@
+# Environment variables
+.env
+
+# Python caches
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Build and Distribution (PyInstaller)
+build/
+dist/
+*.spec
+!build.spec
+
+# Database (Ignore user data, keep the code!)
+*.db
+*.sqlite3
+photomanager.db
+
+# Machine Learning & Caches
+.cache/
+.insightface/
+assets/models/
+
+# OS generated files
+.DS_Store
+Thumbs.db

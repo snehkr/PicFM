@@ -1,0 +1,25 @@
+# GUI Framework
+PyQt6
+PyQt6-Fluent-Widgets[full]
+
+# Core Image & ML Libraries
+Pillow
+numpy==1.26.4
+scikit-learn
+opencv-python
+
+# Face Recognition (InsightFace ONNX CPU)
+insightface
+onnxruntime==1.18.0
+
+# AI Image Embeddings & Duplicates
+torch
+torchvision
+open_clip_torch
+ImageHash
+
+# EXIF Data
+piexif
+
+# System Utilities
+psutil
