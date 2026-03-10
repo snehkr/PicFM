@@ -15,22 +15,18 @@ DEFAULT_THEME = "dark"  # "light" or "dark"
 SUPPORTED_EXTENSIONS = [".jpg", ".jpeg", ".png", ".bmp", ".gif", ".heic", ".heif"]
 
 # Use multiple processes for faster scanning.
-# Set to None to use os.cpu_count() - 1, or a specific number.
-WORKER_PROCESSES = max(1, psutil.cpu_count(logical=False) - 1)
+WORKER_PROCESSES = max(1, (psutil.cpu_count(logical=True) or 4) - 1)
 
 # --- Analysis ---
-# DBSCAN epsilon: Lower values mean clusters are more dense. Adjust based on results.
-# A value between 0.4 and 0.6 is typical for face_recognition's 128d embeddings.
-FACE_CLUSTER_EPS = 0.45
+FACE_CLUSTER_EPS = 1.1
 FACE_CLUSTER_MIN_SAMPLES = 5  # Increased for better quality clusters
 
-# Hamming distance threshold for near-duplicates.
-# A lower value means images must be more similar to be considered duplicates.
+# --- Duplicate Detection ---
 DUPLICATE_THRESHOLD = 5
+CLIP_SIMILARITY_THRESHOLD = 0.92
 
-# --- Face Detection ---
-# Model can be "hog" (faster, less accurate) or "cnn" (slower, more accurate, needs GPU)
-FACE_DETECTION_MODEL = "hog"
+# --- Image Processing ---
+MAX_ANALYSIS_IMAGE_SIZE = 1600
 
-# Resize images larger than this for faster face detection
-MAX_IMAGE_SIZE = 2048
+# --- Cache ---
+THUMBNAIL_CACHE_DIR = os.path.join(BASE_DIR, "thumbnails")

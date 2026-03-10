@@ -55,7 +55,7 @@ _Note: Upon your first scan, the application will download the required AI model
 To package PicFM into a standalone `.exe` file without bloating the installer with CUDA/GPU dependencies:
 
 ```bash
-pyinstaller build.spec
+pyinstaller --clean build.spec
 
 ```
 

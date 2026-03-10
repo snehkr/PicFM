@@ -97,7 +97,6 @@ def analyze_faces(image_path):
 
 
 def run_face_clustering():
-    # ... (Keep your exact existing run_face_clustering code here!) ...
     conn = database.get_db_connection()
     cursor = conn.cursor()
 
